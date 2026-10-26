@@ -1,0 +1,53 @@
+/*
+  Design tokens for TchristsFoM.
+  Gold sampled from logo.png (~#EEC81F average). White-first site.
+  Logo tagline typo "Empoweriing" is corrected in site text.
+*/
+
+:root {
+  --navy-950: #0b0f1f;
+  --navy-900: #141a2e;
+  --gold-300: #f5d76e;
+  --gold-400: #eec81f;
+  --gold-600: #b8860b;
+  /* Text accent on white/surface. Passes WCAG AA at small sizes. */
+  --gold-800: #8b6914;
+  --ivory-50: #ffffff;
+  --surface: #f5f5f7;
+  --white: #ffffff;
+  --ink-900: #1d1d1f;
+  --ink-700: #424245;
+  --ink-500: #6e6e73;
+  --line: #d2d2d7;
+  --mist-200: #6e6e73;
+  --cta: #1d1d1f;
+  --cta-hover: #424245;
+  --radius-sm: 0.75rem;
+  --radius-md: 1.125rem;
+  --radius-lg: 1.5rem;
+  --text-body: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --text-h1: clamp(2.35rem, 1.4rem + 3.2vw, 4.25rem);
+  --text-h2: clamp(1.6rem, 1.2rem + 1.5vw, 2.5rem);
+  --header-height: 3.75rem;
+  --focus-ring: 2px solid var(--gold-600);
+}
+
+@theme inline {
+  --color-navy-950: var(--navy-950);
+  --color-navy-900: var(--navy-900);
+  --color-gold-300: var(--gold-300);
+  --color-gold-400: var(--gold-400);
+  --color-gold-600: var(--gold-600);
+  --color-gold-800: var(--gold-800);
+  --color-ivory-50: var(--ivory-50);
+  --color-surface: var(--surface);
+  --color-white: var(--white);
+  --color-ink-900: var(--ink-900);
+  --color-ink-700: var(--ink-700);
+  --color-ink-500: var(--ink-500);
+  --color-line: var(--line);
+  --color-mist-200: var(--mist-200);
+  --font-display:
+    var(--font-fraunces), "Iowan Old Style", Palatino, "Palatino Linotype", serif;
+  --font-sans: var(--font-manrope), "Avenir Next", "Segoe UI", sans-serif;
+}
