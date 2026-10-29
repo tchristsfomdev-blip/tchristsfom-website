@@ -31,14 +31,13 @@ export default async function BlogPage({
 
   return (
     <>
-      <Section className="border-line border-b py-16 md:py-24" labelledBy="blog-h1">
-        <p className="eyebrow">{t("blogEyebrow")}</p>
-        <h1 id="blog-h1" className="mt-3 max-w-[14ch]">
-          {site.pages.blog.title}
-        </h1>
-        <p className="text-ink-500 mt-6 max-w-[62ch] text-lg">
-          {site.pages.blog.description}
-        </p>
+      <Section className="shell-page" labelledBy="blog-h1">
+        <div className="shell-page__mast">
+          <h1 id="blog-h1" className="shell-page__title">
+            {site.pages.blog.title}
+          </h1>
+          <p className="shell-page__lead">{site.pages.blog.description}</p>
+        </div>
       </Section>
 
       <Section className="py-16 md:py-24" labelledBy="blog-list">

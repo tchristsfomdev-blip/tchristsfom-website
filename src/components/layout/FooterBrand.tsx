@@ -77,8 +77,6 @@ export function FooterBrand() {
       href="/services/corporate-leadership-academy"
       className="footer-brand"
       aria-label={`${siteConfig.brandName} ${t("academyCaption")}`}
-      data-cursor="view"
-      data-cursor-label="Academy"
     >
       <span className="footer-brand__frame" data-footer-brand-frame>
         <Image

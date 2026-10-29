@@ -141,12 +141,7 @@ export default async function CourseDetailPage({ params }: PageProps) {
           <ul className="grid gap-6 md:grid-cols-3">
             {related.map((item) => (
               <li key={item.slug} data-reveal>
-                <Link
-                  href={`/courses/${item.slug}`}
-                  className="block no-underline"
-                  data-cursor="view"
-                  data-cursor-label={t("courseWord")}
-                >
+                <Link href={`/courses/${item.slug}`} className="block no-underline">
                   <h3 className="text-ink-900 hover:text-gold-800 text-lg">
                     {item.title}
                   </h3>

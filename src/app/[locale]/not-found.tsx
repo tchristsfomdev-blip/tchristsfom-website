@@ -16,7 +16,7 @@ export default async function NotFound() {
       title={site.pages.notFound.title}
       description={site.pages.notFound.description}
     >
-      <p className="mt-8 flex flex-col gap-3 sm:flex-row">
+      <p className="flex flex-col gap-3 sm:flex-row">
         <Link href="/" className="cta w-fit">
           {site.pages.notFound.homeLabel}
         </Link>

@@ -24,7 +24,7 @@ export default async function PrivacyPolicyPage({
       title={site.pages.privacy.title}
       description={site.pages.privacy.description}
     >
-      <p className="text-ink-500 mt-8 max-w-[68ch]">{site.pages.privacy.note}</p>
+      <p className="shell-note">{site.pages.privacy.note}</p>
     </ShellPage>
   );
 }

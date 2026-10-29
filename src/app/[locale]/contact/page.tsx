@@ -69,52 +69,53 @@ export default async function ContactPage({
 
       <Section className="py-16 md:py-20" labelledBy="contact-form-heading">
         <div className="contact-layout">
-          <aside className="contact-details">
-            <div>
-              <h2 className="text-2xl tracking-tight">{t("contactDetails")}</h2>
-              <p className="text-ink-500 mt-3 max-w-[42ch] text-sm">
-                {site.pages.contact.formNote}
-              </p>
-              <p className="text-ink-500 mt-3 text-sm">{site.contact.hours}</p>
+          <Suspense fallback={<ContactForm options={options} />}>
+            <ContactFormLoader options={options} />
+          </Suspense>
+
+          <aside className="contact-facts" aria-labelledby="contact-details-heading">
+            <div className="contact-facts__lead">
+              <h2 id="contact-details-heading">{t("contactDetails")}</h2>
+              <p>{site.pages.contact.formNote}</p>
+              <p>{site.contact.hours}</p>
             </div>
 
-            <div>
-              <h3 className="text-lg tracking-tight">{t("email")}</h3>
-              <ul className="mt-2 space-y-1">
+            <div className="contact-facts__block">
+              <h3>{t("email")}</h3>
+              <ul>
                 {site.contact.emails.map((email) => (
                   <li key={email}>
-                    <a className="footer-link" href={`mailto:${email}`}>
-                      {email}
-                    </a>
+                    <a href={`mailto:${email}`}>{email}</a>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div>
-              <h3 className="text-lg tracking-tight">{t("telephone")}</h3>
-              <ul className="mt-2 space-y-1">
+            <div className="contact-facts__block">
+              <h3>{t("telephone")}</h3>
+              <ul className="contact-phones">
                 {site.contact.phones.map((phone) => (
                   <li key={`${phone.label}-${phone.value}`}>
-                    <a className="footer-link" href={phone.href}>
-                      {phone.label}: {phone.value}
+                    <a href={phone.href}>
+                      <span>{phone.label}</span>
+                      {phone.value}
                     </a>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div>
-              <h3 className="text-lg tracking-tight">{t("office")}</h3>
-              <ul className="text-ink-700 mt-2 space-y-1 text-sm">
+            <div className="contact-facts__block">
+              <h3>{t("office")}</h3>
+              <address>
                 {site.contact.addressLines.map((line) => (
-                  <li key={line}>{line}</li>
+                  <span key={line}>{line}</span>
                 ))}
-                <li className="text-ink-500">{site.contact.offices}</li>
-              </ul>
+                <span>{site.contact.offices}</span>
+              </address>
             </div>
 
-            <div className="flex flex-wrap gap-3">
+            <div className="contact-facts__actions">
               <Magnetic>
                 <a href={`mailto:${site.contact.email}`} className="cta-secondary">
                   {t("email")}
@@ -123,7 +124,7 @@ export default async function ContactPage({
               <Magnetic>
                 <a
                   href={site.contact.whatsapp}
-                  className="cta-secondary"
+                  className="cta"
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -133,35 +134,17 @@ export default async function ContactPage({
               </Magnetic>
             </div>
 
-            <div>
-              <h3 className="text-lg tracking-tight">{t("social")}</h3>
-              <ul className="mt-3 max-w-xs">
-                {site.social.map((item) => (
-                  <li key={item.label} className="border-line border-t first:border-t-0">
-                    <a
-                      className="social-link"
-                      href={item.href}
-                      rel="noopener noreferrer"
-                      target="_blank"
-                    >
-                      <span className="social-link__icon" aria-hidden="true">
-                        <Icon
-                          name={socialIcons[item.label] ?? "globe"}
-                          className="size-4"
-                        />
-                      </span>
-                      <span className="social-link__label">{item.label}</span>
-                      <Icon name="chevron-right" className="social-link__chevron" />
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+            <ul className="contact-social" aria-label={t("social")}>
+              {site.social.map((item) => (
+                <li key={item.label}>
+                  <a href={item.href} rel="noopener noreferrer" target="_blank">
+                    <Icon name={socialIcons[item.label] ?? "globe"} className="size-4" />
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </aside>
-
-          <Suspense fallback={<ContactForm options={options} />}>
-            <ContactFormLoader options={options} />
-          </Suspense>
         </div>
       </Section>
     </>

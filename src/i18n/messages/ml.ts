@@ -107,6 +107,7 @@ export const ml = {
     office: "ഓഫീസ്",
     academyCaption: "കോർപ്പറേറ്റ് ലീഡർഷിപ്പ് അക്കാദമി",
     allRights: "എല്ലാ അവകാശങ്ങളും നിക്ഷിപ്തം.",
+    poweredBy: "പവർ ചെയ്തത്",
     developedBy: "വികസിപ്പിച്ചത്",
   },
   form: {

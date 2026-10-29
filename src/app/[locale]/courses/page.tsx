@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
 import { getLocalizedContent } from "@/i18n/content";
@@ -54,12 +55,12 @@ export default async function CoursesPage({
         </HeroMotion>
       </Section>
 
-      <Section className="py-16 md:py-20" labelledBy="courses-intro">
-        <Reveal>
-          <h2 id="courses-intro" className="max-w-[22ch]" data-reveal>
+      <Section className="section-ink statement-band" labelledBy="courses-intro">
+        <Reveal className="statement-band__grid">
+          <h2 id="courses-intro" className="statement-band__title" data-reveal>
             {page.introTitle}
           </h2>
-          <p className="mt-6 max-w-[68ch]" data-reveal>
+          <p className="statement-band__body" data-reveal>
             {page.introBody}
           </p>
         </Reveal>
@@ -78,8 +79,6 @@ export default async function CoursesPage({
                 <Link
                   href={`/courses/${course.slug}`}
                   className="course-row md:grid-cols-[5rem_1fr_auto]"
-                  data-cursor="view"
-                  data-cursor-label={t("courseWord")}
                 >
                   <span className="course-number">
                     {String(index + 1).padStart(2, "0")}
@@ -104,18 +103,43 @@ export default async function CoursesPage({
 
       <Section className="py-16 md:py-24" labelledBy="courses-why">
         <Reveal>
-          <h2 id="courses-why" className="max-w-[22ch]" data-reveal>
-            {home.whyTitle}
-          </h2>
-          <div className="mt-10 grid gap-2 md:grid-cols-2">
-            {home.pillars.map((pillar) => (
-              <article key={pillar.title} className="pillar-card" data-reveal>
-                <h3 className="text-xl">{pillar.title}</h3>
-                <p className="mt-3 max-w-[42ch]">{pillar.body}</p>
-              </article>
-            ))}
+          <div className="why__intro">
+            <p className="eyebrow" data-reveal>
+              {t("whyChoose")}
+            </p>
+            <h2 id="courses-why" className="mt-3 max-w-[18ch]" data-reveal>
+              {home.whyTitle}
+            </h2>
+            <p className="why__lead" data-reveal>
+              {home.whyLead}
+            </p>
           </div>
         </Reveal>
+        <div className="why">
+          <Reveal>
+            <figure className="why__photo" data-reveal>
+              <Image
+                {...siteImages.learning}
+                alt={siteImages.learning.alt}
+                sizes="(max-width: 900px) 100vw, 520px"
+              />
+            </figure>
+          </Reveal>
+          <Reveal stagger={0.07} mode="fromTo">
+            <div className="why__list">
+              {home.pillars.map((pillar, index) => (
+                <article
+                  key={pillar.title}
+                  className={index === 0 ? "why__item why__item--lead" : "why__item"}
+                  data-reveal
+                >
+                  <h3>{pillar.title}</h3>
+                  <p>{pillar.body}</p>
+                </article>
+              ))}
+            </div>
+          </Reveal>
+        </div>
       </Section>
 
       <Section className="section-ink py-16 md:py-20" labelledBy="courses-cta">

@@ -20,11 +20,7 @@ export function MediaFrame({
   sizes = "(max-width: 768px) 100vw, 720px",
 }: MediaFrameProps) {
   return (
-    <div
-      className={`media-frame ${className}`}
-      data-cursor="view"
-      data-cursor-label="View"
-    >
+    <div className={`media-frame ${className}`}>
       <Image
         src={src}
         alt={alt}

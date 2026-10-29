@@ -106,6 +106,7 @@ export const ar = {
     office: "المكتب",
     academyCaption: "أكاديمية القيادة المؤسسية",
     allRights: "جميع الحقوق محفوظة.",
+    poweredBy: "بدعم من",
     developedBy: "تطوير",
   },
   form: {

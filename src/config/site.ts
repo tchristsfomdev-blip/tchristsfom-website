@@ -68,7 +68,7 @@ export const siteConfig = {
     },
     {
       label: "Instagram",
-      href: "https://www.instagram.com/tchrists_fom_gsc",
+      href: "https://www.instagram.com/tchristsfom_international?cplk=MTh1OWllMGZ0cTljcA==",
     },
     {
       label: "LinkedIn",

@@ -35,4 +35,22 @@ export const siteImages = {
     width: 1280,
     height: 720,
   },
+  academy: {
+    src: "/images/content/academy-mentorship.jpg",
+    alt: "A senior consultant mentoring three professionals around a meeting table",
+    width: 1280,
+    height: 720,
+  },
+  virtualWorking: {
+    src: "/images/content/virtual-working.jpg",
+    alt: "Two colleagues joining a video call from a sunlit desk",
+    width: 1152,
+    height: 864,
+  },
+  learning: {
+    src: "/images/content/professional-learning.jpg",
+    alt: "Four professionals reviewing a folder together in a bright lobby",
+    width: 864,
+    height: 1152,
+  },
 } as const;

@@ -21,7 +21,7 @@ export default async function TermsPage({
 
   return (
     <ShellPage title={site.pages.terms.title} description={site.pages.terms.description}>
-      <p className="text-ink-500 mt-8 max-w-[68ch]">{site.pages.terms.note}</p>
+      <p className="shell-note">{site.pages.terms.note}</p>
     </ShellPage>
   );
 }

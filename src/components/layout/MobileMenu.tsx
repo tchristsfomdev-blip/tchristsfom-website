@@ -1,9 +1,10 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useRef } from "react";
 import { Link } from "@/i18n/navigation";
 import { LocaleSwitcher } from "@/components/layout/LocaleSwitcher";
+import { localizeCourses, localizeServices } from "@/i18n/content";
 import { siteConfig } from "@/config/site";
 
 type MobileMenuProps = {
@@ -15,6 +16,9 @@ const navKeys = ["about", "services", "courses", "insights", "contact"] as const
 
 export function MobileMenu({ open, onClose }: MobileMenuProps) {
   const t = useTranslations("ui");
+  const locale = useLocale();
+  const services = localizeServices(locale);
+  const courses = localizeCourses(locale);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
 
@@ -69,16 +73,33 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
         </button>
       </div>
       <nav className="mt-10 flex flex-col" aria-label={t("primary")}>
-        {siteConfig.nav.map((item, index) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className="nav-link text-2xl"
-            onClick={onClose}
-          >
-            {t(navKeys[index] ?? "home")}
-          </Link>
-        ))}
+        {siteConfig.nav.map((item, index) =>
+          item.href === "/services" || item.href === "/courses" ? (
+            <div key={item.href} className="mobile-submenu">
+              <Link href={item.href} className="nav-link text-2xl" onClick={onClose}>
+                {t(item.href === "/services" ? "services" : "courses")}
+              </Link>
+              <ul>
+                {(item.href === "/services" ? services : courses).map((entry) => (
+                  <li key={entry.slug}>
+                    <Link href={`${item.href}/${entry.slug}`} onClick={onClose}>
+                      {entry.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="nav-link text-2xl"
+              onClick={onClose}
+            >
+              {t(navKeys[index] ?? "home")}
+            </Link>
+          ),
+        )}
         <LocaleSwitcher className="mt-8" />
         <Link href={siteConfig.cta.href} className="cta mt-8 w-fit" onClick={onClose}>
           {t("enquire")}

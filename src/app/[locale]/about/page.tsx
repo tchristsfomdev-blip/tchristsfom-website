@@ -73,14 +73,11 @@ export default async function AboutPage({
               regions: site.regions.join(", "),
             })}
           </p>
-          <dl className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          <dl className="stat-board mt-10">
             {site.stats.map((stat) => (
-              <div key={stat.label} className="stat-card bg-white" data-reveal>
-                <dt className="text-ink-500 text-sm">{stat.label}</dt>
-                <CountUp
-                  value={stat.value}
-                  className="font-display mt-2 text-3xl tracking-tight"
-                />
+              <div key={stat.label} className="stat-card" data-reveal>
+                <dt>{stat.label}</dt>
+                <CountUp value={stat.value} className="stat-figure" />
               </div>
             ))}
           </dl>
@@ -92,24 +89,14 @@ export default async function AboutPage({
           <h2 id="mission-heading" data-reveal>
             {t("missionVision")}
           </h2>
-          <div className="mt-10 grid gap-3 md:grid-cols-2">
-            <article className="apple-tile" data-reveal>
-              <span className="icon-well icon-well--accent">
-                <Icon name="target" />
-              </span>
-              <div>
-                <h3 className="text-xl tracking-tight">{t("mission")}</h3>
-                <p className="text-ink-500 mt-2 text-sm">{about.mission}</p>
-              </div>
+          <div className="belief-grid">
+            <article className="belief belief--ink" data-reveal>
+              <h3>{t("mission")}</h3>
+              <p>{about.mission}</p>
             </article>
-            <article className="apple-tile" data-reveal>
-              <span className="icon-well icon-well--accent">
-                <Icon name="sparkles" />
-              </span>
-              <div>
-                <h3 className="text-xl tracking-tight">{t("vision")}</h3>
-                <p className="text-ink-500 mt-2 text-sm">{about.vision}</p>
-              </div>
+            <article className="belief" data-reveal>
+              <h3>{t("vision")}</h3>
+              <p>{about.vision}</p>
             </article>
           </div>
         </Reveal>
@@ -123,20 +110,13 @@ export default async function AboutPage({
           <h2 id="industries-heading" className="mt-3" data-reveal>
             {t("industries")}
           </h2>
-          <ul className="mt-8 flex flex-wrap gap-2">
+          <ul className="industry-list">
             {site.industries.map((industry) => (
-              <li
-                key={industry}
-                className="text-ink-700 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm"
-                data-reveal
-              >
+              <li key={industry} data-reveal>
                 {industry}
               </li>
             ))}
-            <li
-              className="text-ink-500 rounded-full border border-[var(--line)] bg-white px-4 py-2 text-sm"
-              data-reveal
-            >
+            <li className="industry-list__more" data-reveal>
               {t("andMore")}
             </li>
           </ul>

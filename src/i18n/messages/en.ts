@@ -106,6 +106,7 @@ export const en = {
     office: "Office",
     academyCaption: "Corporate Leadership Academy",
     allRights: "All rights reserved.",
+    poweredBy: "Powered by",
     developedBy: "Developed by",
   },
   form: {

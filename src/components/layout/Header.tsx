@@ -1,12 +1,14 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 import { useLenis } from "lenis/react";
 import { Link, usePathname } from "@/i18n/navigation";
+import { localizeCourses, localizeServices } from "@/i18n/content";
 import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/layout/Logo";
+import { NavDropdown } from "@/components/layout/NavDropdown";
 import { LocaleSwitcher } from "@/components/layout/LocaleSwitcher";
 import { MobileMenu } from "@/components/layout/MobileMenu";
 import { Icon } from "@/components/ui/Icon";
@@ -16,7 +18,10 @@ const navKeys = ["about", "services", "courses", "insights", "contact"] as const
 
 export function Header() {
   const pathname = usePathname();
+  const locale = useLocale();
   const t = useTranslations("ui");
+  const services = localizeServices(locale);
+  const courses = localizeCourses(locale);
   const [menuPath, setMenuPath] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
@@ -56,16 +61,34 @@ export function Header() {
       <Container className="flex min-h-[3.75rem] items-center justify-between gap-4">
         <Logo />
         <nav className="primary-nav" aria-label={t("primary")}>
-          {siteConfig.nav.map((item, index) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="nav-link text-sm"
-              aria-current={pathname === item.href ? "page" : undefined}
-            >
-              {t(navKeys[index] ?? "home")}
-            </Link>
-          ))}
+          {siteConfig.nav.map((item, index) =>
+            item.href === "/services" ? (
+              <NavDropdown
+                key={item.href}
+                label={t("services")}
+                href="/services"
+                allLabel={t("allServices")}
+                items={services}
+              />
+            ) : item.href === "/courses" ? (
+              <NavDropdown
+                key={item.href}
+                label={t("courses")}
+                href="/courses"
+                allLabel={t("allCourses")}
+                items={courses}
+              />
+            ) : (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="nav-link text-sm"
+                aria-current={pathname === item.href ? "page" : undefined}
+              >
+                {t(navKeys[index] ?? "home")}
+              </Link>
+            ),
+          )}
         </nav>
         <div className="flex shrink-0 items-center gap-2">
           <LocaleSwitcher />

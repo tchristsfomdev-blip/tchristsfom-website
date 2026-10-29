@@ -1,7 +1,7 @@
 "use client";
 
-import { CustomCursor } from "@/components/motion/CustomCursor";
 import { HashScroll } from "@/components/motion/HashScroll";
+import { PageScroll } from "@/components/motion/PageScroll";
 import { SmoothScroll } from "@/components/motion/SmoothScroll";
 import { registerGsap } from "@/components/motion/gsap";
 
@@ -11,7 +11,7 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <SmoothScroll>
       <HashScroll />
-      <CustomCursor />
+      <PageScroll />
       {children}
     </SmoothScroll>
   );

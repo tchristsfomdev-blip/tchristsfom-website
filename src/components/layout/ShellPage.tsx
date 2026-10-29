@@ -9,11 +9,13 @@ type ShellPageProps = {
 
 export function ShellPage({ title, description, children }: ShellPageProps) {
   return (
-    <section className="py-16 md:py-24">
+    <section className="shell-page">
       <Container>
-        <h1 className="max-w-[20ch]">{title}</h1>
-        <p className="mt-6 max-w-[68ch]">{description}</p>
-        {children}
+        <div className="shell-page__mast">
+          <h1 className="shell-page__title">{title}</h1>
+          <p className="shell-page__lead">{description}</p>
+        </div>
+        {children ? <div className="shell-page__body">{children}</div> : null}
       </Container>
     </section>
   );
