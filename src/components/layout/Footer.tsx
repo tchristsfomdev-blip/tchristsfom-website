@@ -11,9 +11,10 @@ export async function Footer() {
   const locale = await getLocale();
   const t = await getTranslations("ui");
   const { site, services, courses } = getLocalizedContent(locale);
-  const places = site.contact.addresses
-    .map((office) => office.lines.at(-1))
-    .filter((line): line is string => Boolean(line));
+  const places = site.contact.addresses.flatMap((office) => {
+    const place = office.lines.at(-1);
+    return place ? [place] : [];
+  });
   const pages = [
     { href: "/about", label: t("about") },
     { href: "/blog", label: t("insights") },
