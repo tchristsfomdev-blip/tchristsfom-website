@@ -14,13 +14,13 @@ export const siteConfig = {
     "Empowering Organizations. Equipping Professionals. Enhancing Results.",
   headline: "TchristsFoM – Powering People, Planning, and Processes",
   description:
-    "TchristsFoM International Consultants delivers performance-centric consultancy and professional training across the UK, UAE, India, Iraq, Qatar and KSA — empowering organisations with global strategies and local insight.",
+    "TchristsFoM International Consultants delivers performance-centric consultancy and professional training across the UK, GCC & MENA region — empowering organisations with global strategies and local insight.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   website: "https://tchrists.com",
   locale: "en-GB",
   foundedYear: 1993,
-  experienceYears: 31,
-  regions: ["UK", "UAE", "India", "Iraq", "Qatar", "KSA"],
+  experienceYears: 33,
+  regions: ["UK, GCC & MENA region"],
   industries: [
     "Aviation",
     "Oil & Gas",
@@ -40,6 +40,8 @@ export const siteConfig = {
   contact: {
     emails: ["info@tchrists.com", "johnsond@tchrists.com"],
     email: "info@tchrists.com",
+    emailCc: "johnsond@tchrists.com",
+    mailto: "mailto:info@tchrists.com?cc=johnsond@tchrists.com",
     phones: [
       { label: "UAE", value: "+971 56 257 3960", href: "tel:+971562573960" },
       { label: "UAE", value: "+971 52 112 7110", href: "tel:+971521127110" },
@@ -50,14 +52,28 @@ export const siteConfig = {
     ],
     primaryPhone: "+971 52 112 7110",
     primaryPhoneHref: "tel:+971521127110",
-    whatsapp: "https://wa.me/971521127110",
-    addressLines: [
-      "TchristsFoM International Consultants LLC",
-      "Sharjah Media City (Shams)",
-      "PO Box 515000",
-      "Sharjah, United Arab Emirates",
+    whatsapp: "https://wa.me/919400782260",
+    addresses: [
+      {
+        label: "UAE",
+        lines: [
+          "TchristsFoM International Consultants LLC",
+          "Sharjah Media City (Shams)",
+          "PO Box 515000",
+          "Sharjah, United Arab Emirates",
+        ],
+      },
+      {
+        label: "India",
+        lines: [
+          "TchristsFoM International Consultants Pvt Ltd.",
+          "Behind Sacred Heart Church",
+          "Convent Road, Perinchery",
+          "Thrissur 680306",
+        ],
+      },
     ],
-    offices: "India / UAE | Iraq | GCC | Global access via virtual services",
+    offices: "UK, GCC & MENA region",
     hours:
       "Available 24/7 — our team operates around the clock with strategic job allocation across time zones.",
   },
@@ -83,7 +99,7 @@ export const siteConfig = {
     { value: "680+", label: "Businesses empowered globally" },
     { value: "1,354+", label: "Successful projects delivered" },
     { value: "2,000+", label: "Professionals trained" },
-    { value: "31", label: "Years of experience" },
+    { value: "33", label: "Years of experience" },
     { value: "8", label: "Countries" },
     { value: "97%", label: "Client satisfaction" },
   ],
@@ -103,7 +119,7 @@ export const siteConfig = {
     eyebrow: "About TchristsFoM",
     title: "Global expertise. Local transformation.",
     story:
-      "With over 30 years of cross-industry expertise, Tchrists-FoM International Consultants has empowered businesses across the GCC, Iraq, and beyond. Our vision is to create performance-centric, future-ready organisations.",
+      "With 33 years of cross-industry expertise, Tchrists-FoM International Consultants has empowered businesses across the UK, GCC & MENA region. Our vision is to create performance-centric, future-ready organisations.",
     quote:
       "Empowering local talents. Enhancing global organizations. Creating sustainable growth through strategy and skill.",
     vision:
@@ -112,9 +128,9 @@ export const siteConfig = {
       "To empower local talents and organisations by delivering strategic, results-driven solutions that enhance business capabilities, leadership performance, and sustainable growth.",
   },
   home: {
-    eyebrow: "UK · UAE · India · Iraq · Qatar · KSA",
+    eyebrow: "UK, GCC & MENA region",
     h1: "Professional Training Courses & Executive Education",
-    lead: "Advance your career with British-standard, CPD-approved courses designed for modern workplace environments, human resources, and strategic business management — backed by TchristsFoM consultancy across the Middle East, India and the UK.",
+    lead: "Advance your career with British-standard, CPD-approved courses designed for modern workplace environments, human resources, and strategic business management — backed by TchristsFoM consultancy across the UK, GCC & MENA region.",
     sublead:
       "Delivering performance-centric consultancy and hands-on development programmes that power people, planning, and processes.",
     introTitle: "Empower Your Career and Organisation with UK-Aligned Learning",
@@ -130,7 +146,7 @@ export const siteConfig = {
       "Strategic consultancy across HR, finance, marketing, IT and operations — designed around your challenges, capabilities and goals.",
     whyTitle: "Why professionals and organisations choose TchristsFoM",
     whyLead:
-      "Decades of cross-industry consulting, British-standard training, and delivery across six markets.",
+      "Decades of cross-industry consulting, British-standard training, and delivery across the UK, GCC & MENA region.",
     pillars: [
       {
         title: "British-Standard Education",
@@ -199,8 +215,8 @@ export const siteConfig = {
     ctaBody:
       "Schedule a strategy conversation with TchristsFoM. We help you identify gaps, unlock growth, and design people-powered strategies for your organisation — including course schedules, corporate training, and consultancy.",
     trust: [
-      "31 Years Experience",
-      "UK · UAE · India · Iraq · Qatar · KSA",
+      "33 Years Experience",
+      "UK, GCC & MENA region",
       "CPD-Approved Training",
       "Consultancy + Academy",
     ],
@@ -209,7 +225,7 @@ export const siteConfig = {
     about: {
       title: "About Us",
       description:
-        "Tchrists-FoM International Consultants — 31 years of cross-industry expertise empowering businesses across the GCC, Iraq, India, the UK and beyond.",
+        "Tchrists-FoM International Consultants — 33 years of cross-industry expertise empowering businesses across the UK, GCC & MENA region.",
     },
     services: {
       title: "Consultancy Services",

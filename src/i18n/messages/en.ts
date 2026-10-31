@@ -54,7 +54,7 @@ export const en = {
     andMore: "and more",
     yearsExperience: "{years} years of experience",
     experienceSince:
-      "Transforming businesses with proven strategies and industry-leading expertise since {year}, across {regions}.",
+      "Transforming businesses with proven strategies and industry-leading expertise since {year}, across the {regions}.",
     articles: "Articles",
     blogEyebrow: "Blog",
     minRead: "{count} min read",
@@ -103,7 +103,7 @@ export const en = {
     contactDetails: "Contact details",
     email: "Email",
     telephone: "Telephone",
-    office: "Office",
+    offices: "Offices",
     academyCaption: "Corporate Leadership Academy",
     allRights: "All rights reserved.",
     poweredBy: "Powered by",
@@ -119,7 +119,7 @@ export const en = {
     sendError: "Unable to send your enquiry.",
     received: "Enquiry received",
     receivedBody:
-      "Thank you. Our team typically responds within one business day across UK, UAE, India and Iraq time zones. For an immediate reply, WhatsApp or email us directly.",
+      "Thank you. Our team typically responds within one business day across the UK, GCC & MENA region. For an immediate reply, WhatsApp or email us directly.",
     another: "Send another enquiry",
     heading: "Send an enquiry",
     intro:

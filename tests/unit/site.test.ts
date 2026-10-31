@@ -8,12 +8,23 @@ describe("site config", () => {
     expect(siteConfig.brandName).toBe("TchristsFoM");
     expect(siteConfig.legalName).toBe("TchristsFoM International Consultants LLC");
     expect(siteConfig.contact.email).toBe("info@tchrists.com");
-    expect(siteConfig.contact.emails).toContain("johnsond@tchrists.com");
-    expect(siteConfig.contact.addressLines.join(" ")).toMatch(/Sharjah Media City/);
-    expect(siteConfig.regions).toEqual(
-      expect.arrayContaining(["UK", "UAE", "India", "Iraq", "Qatar", "KSA"]),
+    expect(siteConfig.contact.emailCc).toBe("johnsond@tchrists.com");
+    expect(siteConfig.contact.mailto).toBe(
+      "mailto:info@tchrists.com?cc=johnsond@tchrists.com",
     );
-    expect(siteConfig.experienceYears).toBe(31);
+    expect(siteConfig.contact.whatsapp).toBe("https://wa.me/919400782260");
+    expect(siteConfig.contact.emails).toContain("johnsond@tchrists.com");
+    expect(siteConfig.contact.addresses[0]?.lines.join(" ")).toMatch(
+      /Sharjah Media City/,
+    );
+    expect(siteConfig.contact.addresses[1]?.lines.join(" ")).toMatch(
+      /Behind Sacred Heart Church/,
+    );
+    expect(siteConfig.contact.addresses[1]?.lines.join(" ")).toMatch(/Thrissur 680306/);
+    expect(siteConfig.regions).toEqual(["UK, GCC & MENA region"]);
+    expect(siteConfig.home.eyebrow).toBe("UK, GCC & MENA region");
+    expect(siteConfig.contact.offices).toBe("UK, GCC & MENA region");
+    expect(siteConfig.experienceYears).toBe(33);
     expect(siteConfig.tagline).not.toMatch(/Empowring|Empoweriing/);
   });
 

@@ -85,7 +85,15 @@ export default async function ContactPage({
               <ul>
                 {site.contact.emails.map((email) => (
                   <li key={email}>
-                    <a href={`mailto:${email}`}>{email}</a>
+                    <a
+                      href={
+                        email === site.contact.email
+                          ? site.contact.mailto
+                          : `mailto:${email}`
+                      }
+                    >
+                      {email}
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -106,18 +114,23 @@ export default async function ContactPage({
             </div>
 
             <div className="contact-facts__block">
-              <h3>{t("office")}</h3>
-              <address>
-                {site.contact.addressLines.map((line) => (
-                  <span key={line}>{line}</span>
+              <h3>{t("offices")}</h3>
+              <div className="contact-addresses">
+                {site.contact.addresses.map((office) => (
+                  <address key={office.label}>
+                    <span className="contact-address__region">{office.label}</span>
+                    {office.lines.map((line) => (
+                      <span key={line}>{line}</span>
+                    ))}
+                  </address>
                 ))}
-                <span>{site.contact.offices}</span>
-              </address>
+              </div>
+              <p className="contact-offices-note">{site.contact.offices}</p>
             </div>
 
             <div className="contact-facts__actions">
               <Magnetic>
-                <a href={`mailto:${site.contact.email}`} className="cta-secondary">
+                <a href={site.contact.mailto} className="cta-secondary">
                   {t("email")}
                 </a>
               </Magnetic>

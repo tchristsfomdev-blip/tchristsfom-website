@@ -11,7 +11,9 @@ export async function Footer() {
   const locale = await getLocale();
   const t = await getTranslations("ui");
   const { site, services, courses } = getLocalizedContent(locale);
-  const place = site.contact.addressLines.at(-1);
+  const places = site.contact.addresses
+    .map((office) => office.lines.at(-1))
+    .filter((line): line is string => Boolean(line));
   const pages = [
     { href: "/about", label: t("about") },
     { href: "/blog", label: t("insights") },
@@ -22,8 +24,10 @@ export async function Footer() {
     <footer className="site-footer">
       <Container className="footer-close">
         <p className="footer-close__name">{site.legalName}</p>
-        {place ? <p className="footer-close__place">{place}</p> : null}
-        <a className="footer-close__mail" href={`mailto:${siteConfig.contact.email}`}>
+        {places.length > 0 ? (
+          <p className="footer-close__place">{places.join(" · ")}</p>
+        ) : null}
+        <a className="footer-close__mail" href={siteConfig.contact.mailto}>
           {siteConfig.contact.email}
         </a>
         <ul className="footer-social" aria-label={t("social")}>

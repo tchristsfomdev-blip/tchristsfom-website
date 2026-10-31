@@ -59,6 +59,7 @@ export async function POST(request: Request) {
   // Enquiry intake — ready to wire to email/CRM. Logged in development for QA.
   const enquiry = {
     to: siteConfig.contact.email,
+    cc: siteConfig.contact.emailCc,
     name,
     email,
     phone: phone || null,
