@@ -76,6 +76,12 @@ export const en = {
     enquireCourseBody:
       "Ask about schedules, corporate delivery, or how this module fits your team.",
     allCourses: "All courses",
+    rabgaAssociation: "We are associated with RABGA.",
+    rabgaAnnouncement:
+      "RABG Academy & TchristsFoM International announce CPD accreditation collaboration",
+    rabgaAnnouncementMeta: "14 October 2025 · United Kingdom",
+    rabgaCourses: "View RABGA courses",
+    certifications: "Certifications",
     relatedCourses: "Related courses",
     courseN: "Course {n}",
     highlights: "Highlights",

@@ -17,6 +17,10 @@ export const siteConfig = {
     "TchristsFoM International Consultants delivers performance-centric consultancy and professional training across the UK, GCC & MENA region — empowering organisations with global strategies and local insight.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   website: "https://tchrists.com",
+  rabga: {
+    name: "RABGA",
+    coursesUrl: "https://rabga.co.uk/our-courses/",
+  },
   locale: "en-GB",
   foundedYear: 1993,
   experienceYears: 33,

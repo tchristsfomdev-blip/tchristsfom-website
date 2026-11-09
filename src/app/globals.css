@@ -39,7 +39,8 @@ html[dir="rtl"] .service-index__arrow svg,
 html[dir="rtl"] .offer-tile__go svg,
 html[dir="rtl"] .course-tile__go svg,
 html[dir="rtl"] .apple-row > svg,
-html[dir="rtl"] .nav-dropdown__all svg {
+html[dir="rtl"] .nav-dropdown__all svg,
+html[dir="rtl"] .rabga-band__go svg {
   transform: scaleX(-1);
 }
 
@@ -344,20 +345,26 @@ p {
 
 .nav-dropdown__panel {
   position: absolute;
-  top: calc(100% + 0.35rem);
+  top: 100%;
   left: 50%;
   z-index: 50;
   width: min(23.5rem, 72vw);
-  padding: 0.4rem;
-  border: 1px solid var(--line);
-  border-radius: 1rem;
-  background: var(--white);
-  box-shadow: 0 18px 40px rgb(11 15 31 / 0.1);
+  padding-top: 0.45rem;
   transform: translateX(-50%);
 }
 
 .nav-dropdown__panel[hidden] {
   display: none;
+}
+
+.nav-dropdown__sheet {
+  max-height: min(28rem, calc(100dvh - 6rem));
+  padding: 0.4rem;
+  overflow: auto;
+  border: 1px solid var(--line);
+  border-radius: 1rem;
+  background: var(--white);
+  box-shadow: 0 18px 40px rgb(11 15 31 / 0.1);
 }
 
 .nav-dropdown__panel ul {
@@ -725,6 +732,148 @@ html[dir="rtl"] .nav-dropdown__panel {
   color: var(--ink-900);
 }
 
+.rabga-band {
+  background: var(--surface);
+  padding-block: clamp(1.75rem, 1rem + 2vw, 2.75rem);
+}
+
+.rabga-band__inner {
+  display: grid;
+  align-items: center;
+  gap: 1.35rem 2.5rem;
+}
+
+.rabga-band__logo {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0.85rem 1.15rem;
+  border-radius: 1rem;
+  background: var(--white);
+}
+
+.rabga-band__logo img {
+  width: auto;
+  height: 3.35rem;
+  max-width: min(18rem, 70vw);
+}
+
+.rabga-band__meta {
+  margin: 0 0 0.45rem;
+  color: var(--ink-500);
+  font-size: 0.8125rem;
+  font-weight: 650;
+  letter-spacing: 0.01em;
+}
+
+.rabga-band__copy h2 {
+  margin: 0;
+  max-width: 28ch;
+  font-size: clamp(1.45rem, 1.15rem + 1vw, 2.05rem);
+  line-height: 1.2;
+}
+
+.rabga-band__note {
+  margin: 0.7rem 0 0;
+  max-width: 42ch;
+  color: var(--ink-700);
+  font-size: 1rem;
+  line-height: 1.45;
+}
+
+.rabga-band__go {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.7rem;
+  color: var(--gold-800);
+  font-size: 0.95rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+
+.rabga-band__go:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+}
+
+@media (min-width: 760px) {
+  .rabga-band__inner {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .rabga-band__logo {
+    padding-inline-end: 2.5rem;
+    border-inline-end: 1px solid var(--line);
+    border-radius: 0;
+    background: transparent;
+  }
+}
+
+.courses-hero {
+  display: grid;
+  align-items: center;
+  gap: 2rem 3rem;
+}
+
+.courses-hero__copy,
+.courses-hero__media {
+  min-width: 0;
+}
+
+@media (min-width: 1024px) {
+  .courses-hero {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  }
+}
+
+.cert-band {
+  background: var(--navy-950);
+  color: var(--white);
+  padding-block: clamp(2rem, 1.2rem + 2.2vw, 3.25rem);
+}
+
+.cert-band h2 {
+  margin: 0;
+  max-width: 10ch;
+  color: var(--white);
+  font-size: clamp(2rem, 1.4rem + 1.6vw, 3rem);
+  line-height: 1.05;
+}
+
+.cert-band__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem 2.5rem;
+}
+
+.cert-band__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cert-band__mark {
+  display: grid;
+  width: 8.75rem;
+  height: 8.75rem;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 999px;
+  background: var(--white);
+}
+
+.cert-band__mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .offer__intro {
   display: grid;
   gap: 1.15rem 2rem;
@@ -815,15 +964,13 @@ html[dir="rtl"] .nav-dropdown__panel {
     grid-column: span 5;
   }
 
-  .offer-board > :nth-child(6) {
-    grid-column: span 5;
-  }
-
-  .offer-board > :nth-child(7) {
-    grid-column: span 7;
-  }
-
+  .offer-board > :nth-child(6),
+  .offer-board > :nth-child(7),
   .offer-board > :nth-child(8) {
+    grid-column: span 4;
+  }
+
+  .offer-board > :nth-child(9) {
     grid-column: 1 / -1;
     grid-row: auto;
   }

@@ -471,6 +471,7 @@ export const serviceIcons: Record<string, IconName> = {
   "marketing-consultancy": "megaphone",
   "it-consultancy": "cpu",
   "operations-strategies": "settings",
+  "cpd-wellness-trainers-training-academy": "award",
   "virtual-working-techniques": "globe",
 };
 

@@ -13,6 +13,7 @@ describe("site config", () => {
       "mailto:info@tchrists.com?cc=johnsond@tchrists.com",
     );
     expect(siteConfig.contact.whatsapp).toBe("https://wa.me/919400782260");
+    expect(siteConfig.rabga.coursesUrl).toBe("https://rabga.co.uk/our-courses/");
     expect(siteConfig.contact.emails).toContain("johnsond@tchrists.com");
     expect(siteConfig.contact.addresses[0]?.lines.join(" ")).toMatch(
       /Sharjah Media City/,
@@ -59,6 +60,9 @@ describe("services and courses", () => {
     );
     expect(services.map((service) => service.slug)).toContain(
       "v-chro-5p-process-outsourcing",
+    );
+    expect(services.map((service) => service.slug)).toContain(
+      "cpd-wellness-trainers-training-academy",
     );
   });
 

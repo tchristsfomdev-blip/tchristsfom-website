@@ -20,14 +20,59 @@ export function NavDropdown({ label, href, allLabel, items }: NavDropdownProps) 
   const pathname = usePathname();
   const menuId = useId();
   const rootRef = useRef<HTMLDivElement>(null);
+  const closeTimer = useRef<ReturnType<typeof window.setTimeout> | null>(null);
   const [openPath, setOpenPath] = useState<string | null>(null);
-  const open = openPath === pathname;
+  const [pinnedPath, setPinnedPath] = useState<string | null>(null);
+  const open = openPath === pathname || pinnedPath === pathname;
+  const pinned = pinnedPath === pathname;
   const current = pathname === href || pathname.startsWith(`${href}/`);
 
-  const close = () => setOpenPath(null);
-  const show = () => setOpenPath(pathname);
-  const toggle = () =>
-    setOpenPath((currentPath) => (currentPath === pathname ? null : pathname));
+  const clearCloseTimer = () => {
+    if (closeTimer.current !== null) {
+      window.clearTimeout(closeTimer.current);
+      closeTimer.current = null;
+    }
+  };
+
+  const close = () => {
+    clearCloseTimer();
+    setOpenPath(null);
+    setPinnedPath(null);
+  };
+
+  const show = () => {
+    clearCloseTimer();
+    setOpenPath(pathname);
+  };
+
+  const hideSoon = () => {
+    if (pinned) {
+      return;
+    }
+    clearCloseTimer();
+    closeTimer.current = window.setTimeout(() => {
+      setOpenPath(null);
+    }, 180);
+  };
+
+  const toggle = () => {
+    clearCloseTimer();
+    if (pinned) {
+      setPinnedPath(null);
+      setOpenPath(null);
+      return;
+    }
+    setPinnedPath(pathname);
+    setOpenPath(pathname);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (closeTimer.current !== null) {
+        window.clearTimeout(closeTimer.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     if (!open) {
@@ -36,12 +81,16 @@ export function NavDropdown({ label, href, allLabel, items }: NavDropdownProps) 
 
     const onKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
+        clearCloseTimer();
         setOpenPath(null);
+        setPinnedPath(null);
       }
     };
     const onPointer = (event: PointerEvent) => {
       if (!rootRef.current?.contains(event.target as Node)) {
+        clearCloseTimer();
         setOpenPath(null);
+        setPinnedPath(null);
       }
     };
     document.addEventListener("keydown", onKey);
@@ -53,7 +102,12 @@ export function NavDropdown({ label, href, allLabel, items }: NavDropdownProps) 
   }, [open]);
 
   return (
-    <div ref={rootRef} className="nav-dropdown" onMouseEnter={show} onMouseLeave={close}>
+    <div
+      ref={rootRef}
+      className="nav-dropdown"
+      onMouseEnter={show}
+      onMouseLeave={hideSoon}
+    >
       <button
         type="button"
         className="nav-link nav-dropdown__button text-sm"
@@ -66,19 +120,21 @@ export function NavDropdown({ label, href, allLabel, items }: NavDropdownProps) 
         <Icon name="chevron-right" className="nav-dropdown__chevron size-3.5" />
       </button>
       <div id={menuId} className="nav-dropdown__panel" hidden={!open}>
-        <ul>
-          {items.map((item) => (
-            <li key={item.slug}>
-              <Link href={`${href}/${item.slug}`} onClick={close}>
-                {item.title}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <Link href={href} className="nav-dropdown__all" onClick={close}>
-          {allLabel}
-          <Icon name="arrow-right" className="size-3.5" />
-        </Link>
+        <div className="nav-dropdown__sheet">
+          <ul>
+            {items.map((item) => (
+              <li key={item.slug}>
+                <Link href={`${href}/${item.slug}`} onClick={close}>
+                  {item.title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <Link href={href} className="nav-dropdown__all" onClick={close}>
+            {allLabel}
+            <Icon name="arrow-right" className="size-3.5" />
+          </Link>
+        </div>
       </div>
     </div>
   );

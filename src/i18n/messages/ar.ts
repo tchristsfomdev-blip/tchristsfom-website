@@ -78,6 +78,12 @@ export const ar = {
     enquireCourseBody:
       "اسأل عن المواعيد أو التنفيذ المؤسسي أو مدى ملاءمة هذه الوحدة لفريقك.",
     allCourses: "كل الدورات",
+    rabgaAssociation: "نحن مرتبطون بـ RABGA.",
+    rabgaAnnouncement:
+      "أكاديمية RABG وTchristsFoM International تعلنان التعاون لاعتماد التطوير المهني المستمر",
+    rabgaAnnouncementMeta: "14 أكتوبر 2025 · المملكة المتحدة",
+    rabgaCourses: "عرض دورات RABGA",
+    certifications: "الاعتمادات",
     relatedCourses: "دورات ذات صلة",
     courseN: "الدورة {n}",
     highlights: "أبرز النقاط",

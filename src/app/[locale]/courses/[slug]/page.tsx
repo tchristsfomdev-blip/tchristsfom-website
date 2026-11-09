@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { courses } from "@/content/courses";
 import { getLocalizedContent, localizeCourses } from "@/i18n/content";
 import { siteImages } from "@/config/media";
+import { RabgaAssociation } from "@/components/courses/RabgaAssociation";
 import { Section } from "@/components/ui/Section";
 import { MediaFrame } from "@/components/ui/MediaFrame";
 import { Icon } from "@/components/ui/Icon";
@@ -130,6 +131,8 @@ export default async function CourseDetailPage({ params }: PageProps) {
           </aside>
         </Reveal>
       </Section>
+
+      <RabgaAssociation />
 
       <Section className="section-surface py-16" labelledBy="related-heading">
         <Reveal>

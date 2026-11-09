@@ -78,6 +78,12 @@ export const ml = {
     enquireCourseBody:
       "ഷെഡ്യൂളുകൾ, കോർപ്പറേറ്റ് ഡെലിവറി, അല്ലെങ്കിൽ ഈ മൊഡ്യൂൾ നിങ്ങളുടെ ടീമിന് എങ്ങനെ യോജിക്കുന്നു എന്നിവ ചോദിക്കുക.",
     allCourses: "എല്ലാ കോഴ്സുകളും",
+    rabgaAssociation: "ഞങ്ങൾ RABGA യുമായി ബന്ധപ്പെട്ടിരിക്കുന്നു.",
+    rabgaAnnouncement:
+      "RABG അക്കാദമിയും TchristsFoM ഇന്റർനാഷണലും CPD അക്രഡിറ്റേഷൻ സഹകരണം പ്രഖ്യാപിക്കുന്നു",
+    rabgaAnnouncementMeta: "14 ഒക്ടോബർ 2025 · യുണൈറ്റഡ് കിങ്ഡം",
+    rabgaCourses: "RABGA കോഴ്സുകൾ കാണുക",
+    certifications: "സർട്ടിഫിക്കേഷനുകൾ",
     relatedCourses: "ബന്ധപ്പെട്ട കോഴ്സുകൾ",
     courseN: "കോഴ്സ് {n}",
     highlights: "പ്രധാന കാര്യങ്ങൾ",

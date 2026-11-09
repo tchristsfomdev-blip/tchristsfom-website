@@ -1,9 +1,11 @@
 import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/i18n/navigation";
+import { courseCertifications } from "@/content/certifications";
 import { getLocalizedContent } from "@/i18n/content";
 import { siteImages } from "@/config/media";
 import { shellMetadata } from "@/components/layout/ShellPage";
+import { RabgaAssociation } from "@/components/courses/RabgaAssociation";
 import { Section } from "@/components/ui/Section";
 import { MediaFrame } from "@/components/ui/MediaFrame";
 import { Reveal } from "@/components/motion/Reveal";
@@ -35,25 +37,45 @@ export default async function CoursesPage({
   return (
     <>
       <Section className="border-line border-b py-16 md:py-24" labelledBy="courses-h1">
-        <HeroMotion className="grid items-center gap-10 lg:grid-cols-2">
-          <div>
+        <HeroMotion className="courses-hero">
+          <div className="courses-hero__copy">
             <p className="eyebrow" data-hero="eyebrow">
               {t("courseDirectory")}
             </p>
             <h1 id="courses-h1" className="mt-4 max-w-[18ch]" data-hero="title">
               {page.title}
             </h1>
-            <p className="mt-6 max-w-[68ch] text-lg" data-hero="body">
+            <p className="mt-6 max-w-[42ch] text-lg" data-hero="body">
               {page.description}
             </p>
           </div>
-          <div data-hero="media">
+          <div className="courses-hero__media" data-hero="media">
             <Parallax y={36}>
               <MediaFrame {...siteImages.courses} priority />
             </Parallax>
           </div>
         </HeroMotion>
       </Section>
+
+      <Section className="cert-band" labelledBy="certifications-heading">
+        <div className="cert-band__inner">
+          <h2 id="certifications-heading">{t("certifications")}</h2>
+          <ul className="cert-band__row">
+            {courseCertifications.map((mark) => (
+              <li key={mark.src} className="cert-band__mark">
+                <Image
+                  src={mark.src}
+                  alt={mark.alt}
+                  width={mark.width}
+                  height={mark.height}
+                />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </Section>
+
+      <RabgaAssociation />
 
       <Section className="section-ink statement-band" labelledBy="courses-intro">
         <Reveal className="statement-band__grid">

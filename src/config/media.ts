@@ -53,4 +53,10 @@ export const siteImages = {
     width: 864,
     height: 1152,
   },
+  rabga: {
+    src: "/images/partners/rabga.png",
+    alt: "RA British Global Academy",
+    width: 370,
+    height: 80,
+  },
 } as const;

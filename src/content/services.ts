@@ -279,6 +279,31 @@ export const services: Service[] = [
     ],
   },
   {
+    slug: "cpd-wellness-trainers-training-academy",
+    title: "CPD Wellness Trainers Training Academy",
+    shortDescription:
+      "Building internationally trained professionals in fitness, swimming, physical education and holistic wellness.",
+    headline: "Competent, confident and professionally certified trainers.",
+    overview:
+      "We deliver structured, theory-based and practical trainer education programmes designed to develop competent, confident and professionally certified trainers.",
+    points: [
+      "CPD Swimming Trainer Course — Developing professional swimming instructors and swimming coaches.",
+      "CPD Gym Trainer Course — Preparing qualified gym instructors and fitness trainers.",
+      "CPD Wellness Trainer Course — Training professionals in holistic wellness, fitness and healthy lifestyle management.",
+      "CPD Physical Education Trainer Course — Preparing professionals to deliver structured physical education and fitness programmes.",
+    ],
+    sections: [
+      {
+        title: "Our approach",
+        body: "International-standard curriculum, hands-on practical training, professional assessment and certification pathways through recognised accreditation partners.",
+      },
+      {
+        title: "Our vision",
+        body: "Creating employment opportunities by transforming fitness and wellness enthusiasts into professionally trained trainers.",
+      },
+    ],
+  },
+  {
     slug: "virtual-working-techniques",
     title: "Virtual Working Techniques",
     shortDescription:
