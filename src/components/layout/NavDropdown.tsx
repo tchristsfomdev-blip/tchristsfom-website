@@ -20,7 +20,7 @@ export function NavDropdown({ label, href, allLabel, items }: NavDropdownProps) 
   const pathname = usePathname();
   const menuId = useId();
   const rootRef = useRef<HTMLDivElement>(null);
-  const closeTimer = useRef<ReturnType<typeof window.setTimeout> | null>(null);
+  const closeTimer = useRef<number | null>(null);
   const [openPath, setOpenPath] = useState<string | null>(null);
   const [pinnedPath, setPinnedPath] = useState<string | null>(null);
   const open = openPath === pathname || pinnedPath === pathname;
