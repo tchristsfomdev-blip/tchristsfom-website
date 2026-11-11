@@ -73,7 +73,7 @@ export default async function AboutPage({
               regions: site.regions.join(", "),
             })}
           </p>
-          <dl className="stat-board mt-10">
+          <dl className="stat-board stat-board--offset">
             {site.stats.map((stat) => (
               <div key={stat.label} className="stat-card" data-reveal>
                 <dt>{stat.label}</dt>

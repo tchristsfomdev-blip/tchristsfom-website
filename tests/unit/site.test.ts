@@ -22,9 +22,9 @@ describe("site config", () => {
       /Behind Sacred Heart Church/,
     );
     expect(siteConfig.contact.addresses[1]?.lines.join(" ")).toMatch(/Thrissur 680306/);
-    expect(siteConfig.regions).toEqual(["UK, GCC & MENA region"]);
-    expect(siteConfig.home.eyebrow).toBe("UK, GCC & MENA region");
-    expect(siteConfig.contact.offices).toBe("UK, GCC & MENA region");
+    expect(siteConfig.regions).toEqual(["UAE", "India", "UK", "Iraq", "Qatar", "KSA"]);
+    expect(siteConfig.home.h1).toBe("Transform Your Business With Expert Consultancy");
+    expect(siteConfig.contact.offices).toBe("UAE, India, UK, Iraq, Qatar & KSA");
     expect(siteConfig.experienceYears).toBe(33);
     expect(siteConfig.tagline).not.toMatch(/Empowring|Empoweriing/);
   });
@@ -32,7 +32,7 @@ describe("site config", () => {
   it("keeps about, services, courses and contact in primary navigation", () => {
     const hrefs = siteConfig.nav.map((item) => item.href);
     expect(hrefs).toEqual(
-      expect.arrayContaining(["/about", "/services", "/courses", "/contact"]),
+      expect.arrayContaining(["/about", "/services", "/campus", "/courses", "/contact"]),
     );
     expect(siteConfig.cta.href).toBe("/contact");
   });
@@ -42,6 +42,7 @@ describe("site config", () => {
       siteConfig.description,
       siteConfig.pages.about.description,
       siteConfig.pages.services.description,
+      siteConfig.pages.campus.description,
       siteConfig.pages.courses.description,
       siteConfig.pages.contact.description,
       siteConfig.pages.privacy.description,
@@ -58,9 +59,9 @@ describe("services and courses", () => {
     expect(services.map((service) => service.slug)).toContain(
       "corporate-leadership-academy",
     );
-    expect(services.map((service) => service.slug)).toContain(
-      "v-chro-5p-process-outsourcing",
-    );
+    expect(services.map((service) => service.slug)).toContain("v-chro-consultancy");
+    expect(services.map((service) => service.slug)).toContain("5p-process-outsourcing");
+    expect(services.map((service) => service.slug)).toContain("kerala-governance-lab");
     expect(services.map((service) => service.slug)).toContain(
       "cpd-wellness-trainers-training-academy",
     );

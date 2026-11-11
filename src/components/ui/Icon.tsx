@@ -465,7 +465,8 @@ export type { IconName };
 
 export const serviceIcons: Record<string, IconName> = {
   "corporate-leadership-academy": "graduation",
-  "v-chro-5p-process-outsourcing": "users",
+  "v-chro-consultancy": "users",
+  "5p-process-outsourcing": "layers",
   "hr-organizational-audits": "search",
   "financial-management-consultancy": "chart",
   "marketing-consultancy": "megaphone",
@@ -473,6 +474,7 @@ export const serviceIcons: Record<string, IconName> = {
   "operations-strategies": "settings",
   "cpd-wellness-trainers-training-academy": "award",
   "virtual-working-techniques": "globe",
+  "kerala-governance-lab": "shield",
 };
 
 export const pillarIcons: IconName[] = ["shield", "award", "clock", "layers"];

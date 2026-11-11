@@ -41,14 +41,14 @@ export default async function HomePage({
             </p>
             <div className="hero__actions" data-hero="cta">
               <Magnetic>
-                <Link href="/courses" className="cta">
-                  {t("exploreCourses")}
+                <Link href="/contact" className="cta">
+                  {t("scheduleCall")}
                   <Icon name="arrow-right" className="size-4" />
                 </Link>
               </Magnetic>
               <Magnetic>
-                <Link href="/contact" className="cta-secondary">
-                  {t("contactUs")}
+                <Link href="/services" className="cta-secondary">
+                  {t("viewServices")}
                 </Link>
               </Magnetic>
             </div>
@@ -79,7 +79,7 @@ export default async function HomePage({
           <div className="apple-group">
             <ul className="grid sm:grid-cols-2 lg:grid-cols-4">
               {home.trust.map((item, index) => {
-                const icons = ["award", "globe", "graduation", "briefcase"] as const;
+                const icons = ["globe", "layers", "target", "chart"] as const;
                 return (
                   <li key={item} className="apple-row" data-reveal>
                     <DrawIcon>
@@ -126,7 +126,7 @@ export default async function HomePage({
           </Parallax>
           <Reveal className="intro-band__copy">
             <p className="eyebrow" data-reveal>
-              {t("ukAligned")}
+              {home.introEyebrow}
             </p>
             <TextReveal as="h2" id="intro-heading" className="mt-3" type="words" scroll>
               {home.introTitle}
@@ -141,12 +141,31 @@ export default async function HomePage({
         </div>
       </Section>
 
+      <Section className="section-ink py-16 md:py-20" labelledBy="support-heading">
+        <Reveal mode="fromTo">
+          <h2 id="support-heading" className="max-w-[18ch]" data-reveal>
+            {home.supportTitle}
+          </h2>
+          <p className="mt-4 max-w-[62ch] text-white/70" data-reveal>
+            {home.supportBody}
+          </p>
+          <div className="mt-9" data-reveal>
+            <Magnetic>
+              <Link href="/contact" className="cta">
+                {t("scheduleCall")}
+                <Icon name="arrow-right" className="size-4" />
+              </Link>
+            </Magnetic>
+          </div>
+        </Reveal>
+      </Section>
+
       <Section className="section-surface py-16 md:py-24" labelledBy="services-heading">
         <Reveal>
           <div className="offer__intro">
             <div className="offer__title" data-reveal>
               <p className="eyebrow">{t("consultancy")}</p>
-              <h2 id="services-heading" className="mt-3 max-w-[14ch]">
+              <h2 id="services-heading" className="mt-3 max-w-[18ch]">
                 {home.servicesTitle}
               </h2>
             </div>
@@ -297,7 +316,39 @@ export default async function HomePage({
         </div>
       </Section>
 
-      <Section className="py-16 md:py-24" labelledBy="cases-heading">
+      <Section className="py-16 md:py-24" labelledBy="approach-heading">
+        <Reveal>
+          <p className="eyebrow" data-reveal>
+            {t("ourApproach")}
+          </p>
+          <h2 id="approach-heading" className="mt-3 max-w-[18ch]" data-reveal>
+            {home.approachTitle}
+          </h2>
+          <p className="text-ink-500 mt-4 max-w-[65ch]" data-reveal>
+            {home.approachLead}
+          </p>
+          <p className="text-ink-700 mt-3 max-w-[68ch]" data-reveal>
+            {home.approachBody}
+          </p>
+        </Reveal>
+        <Reveal className="mt-8" stagger={0.05}>
+          <ol className="case-list">
+            {home.steps.map((step, index) => (
+              <li key={step.title} className="case-line" data-reveal>
+                <h3>
+                  <span className="text-gold-800">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>{" "}
+                  {step.title}
+                </h3>
+                <p>{step.body}</p>
+              </li>
+            ))}
+          </ol>
+        </Reveal>
+      </Section>
+
+      <Section className="section-surface py-16 md:py-24" labelledBy="cases-heading">
         <div className="mb-10 grid items-end gap-10 lg:grid-cols-[1fr_0.9fr]">
           <Reveal>
             <p className="eyebrow" data-reveal>
@@ -326,9 +377,10 @@ export default async function HomePage({
             ))}
           </ul>
         </Reveal>
+        <p className="text-ink-900 mt-8 max-w-[42ch] text-lg">{home.casesClose}</p>
       </Section>
 
-      <Section className="section-surface py-16 md:py-20" labelledBy="faq-heading">
+      <Section className="py-16 md:py-20" labelledBy="faq-heading">
         <Reveal>
           <h2 id="faq-heading" data-reveal>
             {home.faqTitle}
@@ -368,7 +420,7 @@ export default async function HomePage({
           <div className="mt-9 flex flex-wrap gap-3" data-reveal>
             <Magnetic>
               <Link href="/contact" className="cta">
-                {t("contactUs")}
+                {t("scheduleCall")}
                 <Icon name="arrow-right" className="size-4" />
               </Link>
             </Magnetic>

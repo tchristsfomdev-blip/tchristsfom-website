@@ -4,6 +4,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useRef, useState } from "react";
 import { useLenis } from "lenis/react";
 import { Link, usePathname } from "@/i18n/navigation";
+import { getCampusPages } from "@/content/campus";
 import { localizeCourses, localizeServices } from "@/i18n/content";
 import { siteConfig } from "@/config/site";
 import { Container } from "@/components/ui/Container";
@@ -14,7 +15,14 @@ import { MobileMenu } from "@/components/layout/MobileMenu";
 import { Icon } from "@/components/ui/Icon";
 import { Magnetic } from "@/components/motion/Magnetic";
 
-const navKeys = ["about", "services", "courses", "insights", "contact"] as const;
+const navLabel = {
+  "/about": "about",
+  "/services": "services",
+  "/campus": "campus",
+  "/courses": "courses",
+  "/blog": "insights",
+  "/contact": "contact",
+} as const;
 
 export function Header() {
   const pathname = usePathname();
@@ -22,6 +30,7 @@ export function Header() {
   const t = useTranslations("ui");
   const services = localizeServices(locale);
   const courses = localizeCourses(locale);
+  const campus = getCampusPages(locale);
   const [menuPath, setMenuPath] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const [hidden, setHidden] = useState(false);
@@ -61,7 +70,7 @@ export function Header() {
       <Container className="flex min-h-[3.75rem] items-center justify-between gap-4">
         <Logo />
         <nav className="primary-nav" aria-label={t("primary")}>
-          {siteConfig.nav.map((item, index) =>
+          {siteConfig.nav.map((item) =>
             item.href === "/services" ? (
               <NavDropdown
                 key={item.href}
@@ -78,6 +87,14 @@ export function Header() {
                 allLabel={t("allCourses")}
                 items={courses}
               />
+            ) : item.href === "/campus" ? (
+              <NavDropdown
+                key={item.href}
+                label={t("campus")}
+                href="/campus"
+                allLabel={t("allCampus")}
+                items={campus}
+              />
             ) : (
               <Link
                 key={item.href}
@@ -85,7 +102,7 @@ export function Header() {
                 className="nav-link text-sm"
                 aria-current={pathname === item.href ? "page" : undefined}
               >
-                {t(navKeys[index] ?? "home")}
+                {t(navLabel[item.href as keyof typeof navLabel] ?? "home")}
               </Link>
             ),
           )}
@@ -111,14 +128,14 @@ export function Header() {
         </div>
       </Container>
       <nav className="nav-fallback" aria-label={t("primary")}>
-        {siteConfig.nav.map((item, index) => (
+        {siteConfig.nav.map((item) => (
           <Link
             key={item.href}
             href={item.href}
             className="nav-link"
             aria-current={pathname === item.href ? "page" : undefined}
           >
-            {t(navKeys[index] ?? "home")}
+            {t(navLabel[item.href as keyof typeof navLabel] ?? "home")}
           </Link>
         ))}
         <Link href={siteConfig.cta.href} className="cta mt-2">

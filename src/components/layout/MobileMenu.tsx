@@ -4,6 +4,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { useEffect, useRef } from "react";
 import { Link } from "@/i18n/navigation";
 import { LocaleSwitcher } from "@/components/layout/LocaleSwitcher";
+import { getCampusPages } from "@/content/campus";
 import { localizeCourses, localizeServices } from "@/i18n/content";
 import { siteConfig } from "@/config/site";
 
@@ -12,13 +13,21 @@ type MobileMenuProps = {
   onClose: () => void;
 };
 
-const navKeys = ["about", "services", "courses", "insights", "contact"] as const;
+const navLabel = {
+  "/about": "about",
+  "/services": "services",
+  "/campus": "campus",
+  "/courses": "courses",
+  "/blog": "insights",
+  "/contact": "contact",
+} as const;
 
 export function MobileMenu({ open, onClose }: MobileMenuProps) {
   const t = useTranslations("ui");
   const locale = useLocale();
   const services = localizeServices(locale);
   const courses = localizeCourses(locale);
+  const campus = getCampusPages(locale);
   const dialogRef = useRef<HTMLDialogElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
 
@@ -73,14 +82,21 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
         </button>
       </div>
       <nav className="mt-10 flex flex-col" aria-label={t("primary")}>
-        {siteConfig.nav.map((item, index) =>
-          item.href === "/services" || item.href === "/courses" ? (
+        {siteConfig.nav.map((item) =>
+          item.href === "/services" ||
+          item.href === "/courses" ||
+          item.href === "/campus" ? (
             <div key={item.href} className="mobile-submenu">
               <Link href={item.href} className="nav-link text-2xl" onClick={onClose}>
-                {t(item.href === "/services" ? "services" : "courses")}
+                {t(navLabel[item.href])}
               </Link>
               <ul>
-                {(item.href === "/services" ? services : courses).map((entry) => (
+                {(item.href === "/services"
+                  ? services
+                  : item.href === "/courses"
+                    ? courses
+                    : campus
+                ).map((entry) => (
                   <li key={entry.slug}>
                     <Link href={`${item.href}/${entry.slug}`} onClick={onClose}>
                       {entry.title}
@@ -96,7 +112,7 @@ export function MobileMenu({ open, onClose }: MobileMenuProps) {
               className="nav-link text-2xl"
               onClick={onClose}
             >
-              {t(navKeys[index] ?? "home")}
+              {t(navLabel[item.href as keyof typeof navLabel] ?? "home")}
             </Link>
           ),
         )}

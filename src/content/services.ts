@@ -1,7 +1,6 @@
 /**
- * Consultancy services sourced from https://tchrists.com/ service pages
- * (accessed Oct 2026). Copy is adapted for clarity; outcome figures are
- * taken from the live site where published.
+ * Consultancy services. Outcome claims are included only where the
+ * client supplied them.
  */
 export type ServiceSection = {
   title: string;
@@ -42,32 +41,29 @@ export const services: Service[] = [
     slug: "corporate-leadership-academy",
     title: "Corporate Leadership Academy",
     shortDescription:
-      "Bridging education and employment through hands-on training with global MNCs.",
-    headline: "From Classroom to Corporate – The Future of Talent Development",
+      "Practical learning, mentorship and real-world exposure for industry-ready professionals.",
+    headline: "Bridge the gap between education and employment",
     overview:
-      "Our Corporate Leadership Academy bridges the gap between education and employment. We partner with global MNCs to deliver real-world, on-the-job training programmes tailored for local talent.",
+      "Our Corporate Leadership Academy focuses on developing industry-ready professionals through practical learning, mentorship and exposure to real-world business environments. We help bridge the gap between education and employment by equipping professionals with the skills, knowledge and confidence required to succeed in global organizations.",
     points: [
-      "Live mentorship by top CHROs and C-level professionals",
-      "International exposure and skill alignment",
-      "Support for young CXOs to lead and succeed in their roles",
-      "Performance-based progression",
+      "Leadership development",
+      "Professional skills",
+      "Workplace readiness",
+      "Mentorship and practical learning",
+      "Global career preparation",
     ],
     sections: [
       {
-        title: "What makes us unique",
+        title: "Key focus areas",
         items: [
-          "Live mentorship by top CHROs and C-Level professionals",
-          "International exposure and skill alignment",
-          "Support for young CXOs to lead and succeed in their roles",
-          "Performance-based progression",
+          "Leadership development",
+          "Professional skills",
+          "Workplace readiness",
+          "Mentorship and practical learning",
+          "Global career preparation",
         ],
       },
-      {
-        title: "The TchristsFoM Edge",
-        body: "Where insight meets execution to deliver real business transformation — enabling local talent to transition into global roles through live mentorship, MNC exposure, and performance-driven training.",
-      },
     ],
-    // Links sourced from https://tchrists.com/corporate-leadership-academy/
     actions: [
       {
         label: "Apply to the Academy",
@@ -90,39 +86,52 @@ export const services: Service[] = [
     ],
   },
   {
-    slug: "v-chro-5p-process-outsourcing",
-    title: "V-CHRO & 5P Process Outsourcing",
+    slug: "v-chro-consultancy",
+    title: "V-CHRO Consultancy",
     shortDescription:
-      "Strategic HR leadership virtually, with global-standard people-process outsourcing.",
-    headline: "Virtual CHRO Solutions for Global HR Transformation",
+      "Strategic HR leadership without the cost of a full-time senior HR function.",
+    headline:
+      "Virtual CHRO support for strategy, leadership and workforce transformation",
     overview:
-      "TchristsFoM provides on-demand CHRO services, bringing global HR strategy, transformation, and execution to your organisation. Ideal for SMEs, scaling companies, and global branches.",
+      "Access strategic HR leadership without the cost of maintaining a full-time senior HR function. Our Virtual CHRO consultancy provides organizations with expert support in HR strategy, organizational development, leadership and workforce transformation.",
     points: [
-      "International HR policy synchronisation",
-      "Leadership development and succession planning",
-      "Organisation audits and restructuring",
-      "End-to-end HR process outsourcing and compliance",
-      "Published outcomes include ~30% HR efficiency gains and ~50% cost reduction in selected deployments",
+      "HR strategy and planning",
+      "Leadership development",
+      "Succession planning",
+      "Organizational restructuring",
+      "Talent engagement",
+      "HR policy development",
+      "Culture transformation",
     ],
     sections: [
       {
-        title: "Key services",
+        title: "Our V-CHRO services",
         items: [
-          "International HR policy synchronisation",
-          "Leadership development and succession planning",
-          "Organisation audits and restructuring",
-          "Culture-building and talent engagement",
-          "Virtual working functions — empowering people to work virtually, raise remote productivity, and thrive globally while living locally",
+          "HR strategy and planning",
+          "Leadership development",
+          "Succession planning",
+          "Organizational restructuring",
+          "Talent engagement",
+          "HR policy development",
+          "Culture transformation",
         ],
       },
+    ],
+  },
+  {
+    slug: "5p-process-outsourcing",
+    title: "5P Process Outsourcing",
+    shortDescription:
+      "People, Process, Policy, Performance and Progress for HR and administrative functions.",
+    headline: "Structured processes that improve efficiency and scalability",
+    overview:
+      "Our 5P Process Outsourcing model focuses on People, Process, Policy, Performance and Progress to help organizations improve their HR and administrative functions. We support businesses with structured processes, compliance management, workflow improvement and performance-focused solutions that can improve efficiency and scalability.",
+    points: ["People", "Process", "Policy", "Performance", "Progress"],
+    sections: [
       {
-        title: "5P Process Outsourcing (V-CHRO as a Service)",
-        body: "The 5P model focuses on People, Process, Policy, Performance, and Progress. We help organisations outsource and elevate HR and administrative functions to international benchmarks.",
-        items: [
-          "End-to-end HR process outsourcing",
-          "Compliance and audit management",
-          "Workflow automation and analytics",
-        ],
+        title: "What the model covers",
+        body: "We support businesses with structured processes, compliance management, workflow improvement and performance-focused solutions that can improve efficiency and scalability.",
+        items: ["People", "Process", "Policy", "Performance", "Progress"],
       },
     ],
   },
@@ -130,39 +139,20 @@ export const services: Service[] = [
     slug: "hr-organizational-audits",
     title: "HR & Organizational Audits",
     shortDescription:
-      "Evaluating HR systems and structures to identify gaps and improve efficiency.",
-    headline: "Know Where You Stand – Build What Comes Next",
+      "Identify gaps, improve systems and strengthen organizational performance.",
+    headline: "A clear view of structures, policies and practices",
     overview:
-      "Our HR & Organizational Audit service delivers a clear diagnosis of your organisational health — HR maturity, structural gaps, compliance risks, and operational inefficiencies — with an action-oriented roadmap.",
+      "Identify gaps, improve systems and strengthen organizational performance with our HR and organizational audit services. We evaluate HR structures, policies, processes and organizational practices to identify areas for improvement and recommend practical solutions.",
     points: [
-      "Deep-dive audit of HR systems and practices",
-      "SWOT analysis and international benchmarking",
-      "Step-by-step mitigation and improvement roadmap",
+      "HR structures",
+      "Policies and processes",
+      "Organizational practices",
+      "Practical recommendations for improvement",
     ],
     sections: [
       {
-        title: "What we deliver",
-        items: [
-          "Deep-dive audit of your HR systems and practices",
-          "SWOT analysis and benchmarking against international best practices",
-          "Action-oriented recommendations and a step-by-step mitigation roadmap",
-        ],
-      },
-      {
-        title: "Why it matters",
-        body: "Knowing where you stand enables strategic correction and sustainable progress.",
-        items: [
-          "360° HR insight — capabilities, risks, and improvement areas through detailed diagnostics",
-          "Benchmark with the best — align people practices with international standards",
-          "Your roadmap to progress — clear recommendations that turn audit insights into lasting improvement",
-        ],
-      },
-      {
-        title: "Benefits for business",
-        items: [
-          "Deep-dive diagnosis with global benchmarking and SWOT",
-          "Strategic roadmap with actionable insights for sustainable progress",
-        ],
+        title: "What we evaluate",
+        items: ["HR structures", "Policies", "Processes", "Organizational practices"],
       },
     ],
   },
@@ -170,37 +160,19 @@ export const services: Service[] = [
     slug: "financial-management-consultancy",
     title: "Financial Management Consultancy",
     shortDescription:
-      "Enhancing financial performance through expert analysis and strategic planning.",
-    headline: "Financial Leadership for Sustained Excellence",
+      "Strategic financial management support for better long-term decisions.",
+    headline: "Make better financial decisions",
     overview:
-      "Our financial experts help clients optimise resources, restructure operations, and build sustainable financial frameworks.",
+      "Make better financial decisions with strategic financial management support. Our consultants help organizations evaluate financial performance, identify opportunities and develop strategies that support long-term business growth.",
     points: [
-      "Financial health checks",
-      "Budgeting and forecasting",
-      "Profitability analysis",
-      "CFO-as-a-Service",
+      "Evaluate financial performance",
+      "Identify opportunities",
+      "Strategies for long-term business growth",
     ],
     sections: [
       {
-        title: "Core services",
-        items: [
-          "Financial health checks",
-          "Budgeting and forecasting",
-          "Profitability analysis",
-          "CFO-as-a-Service",
-        ],
-      },
-      {
-        title: "Outcomes delivered",
-        items: [
-          "Streamlined reporting",
-          "Strategic cost control",
-          "Reduced financial waste",
-        ],
-      },
-      {
-        title: "Who we work with",
-        body: "Forward-thinking organisations across diverse industries seeking sustainable growth and strategic transformation — industry-diverse, globally present, and people-centric.",
+        title: "How we help",
+        body: "Our consultants help organizations evaluate financial performance, identify opportunities and develop strategies that support long-term business growth.",
       },
     ],
   },
@@ -208,22 +180,24 @@ export const services: Service[] = [
     slug: "marketing-consultancy",
     title: "Marketing Consultancy",
     shortDescription:
-      "Crafting impactful marketing strategies for brand growth and market reach.",
-    headline: "Strategy. Creativity. Market Domination.",
+      "Marketing strategies aligned with brand, customers and business objectives.",
+    headline: "Build a stronger market presence",
     overview:
-      "We craft marketing strategies that elevate your brand, align with your goals, and capture your ideal audience.",
+      "Build a stronger market presence with customized marketing strategies aligned with your business objectives. Our marketing consultancy services help businesses improve brand positioning, customer engagement, market reach and overall marketing performance.",
     points: [
-      "Market analysis and brand positioning",
-      "Integrated digital and traditional campaigns",
-      "Creative direction and KPI-based execution",
+      "Brand positioning",
+      "Customer engagement",
+      "Market reach",
+      "Marketing performance",
     ],
     sections: [
       {
-        title: "Our approach",
+        title: "Where we focus",
         items: [
-          "Market analysis and brand positioning",
-          "Integrated digital and traditional campaigns",
-          "Creative direction and KPI-based execution",
+          "Brand positioning",
+          "Customer engagement",
+          "Market reach",
+          "Overall marketing performance",
         ],
       },
     ],
@@ -232,48 +206,45 @@ export const services: Service[] = [
     slug: "it-consultancy",
     title: "IT Consultancy",
     shortDescription:
-      "Delivering smart, secure, and scalable IT solutions for business success.",
-    headline: "Smart IT Solutions for Smart Business",
+      "Secure, scalable and practical IT strategies that support how the business works.",
+    headline: "Technology that improves productivity, efficiency and continuity",
     overview:
-      "Technology is not just support — it is a strategic asset. We provide consultancy that bridges business needs with efficient, secure, and scalable IT systems.",
+      "Technology plays a critical role in modern business. Our IT consultancy services help organizations identify technology requirements and develop secure, scalable and practical IT strategies. We help businesses use technology more effectively to improve productivity, efficiency and business continuity.",
     points: [
-      "IT infrastructure planning",
-      "ERP and CRM integration",
-      "Cybersecurity strategy",
-      "IT cost optimisation",
+      "Technology requirements",
+      "Secure, scalable and practical IT strategies",
+      "Productivity and efficiency",
+      "Business continuity",
     ],
     sections: [
       {
-        title: "What we provide",
-        items: [
-          "IT infrastructure planning",
-          "ERP and CRM integration",
-          "Cybersecurity strategy",
-          "IT cost optimisation",
-        ],
+        title: "What we help you do",
+        body: "We help businesses use technology more effectively to improve productivity, efficiency and business continuity.",
       },
     ],
   },
   {
     slug: "operations-strategies",
-    title: "Operations Strategies",
+    title: "Operations Strategy Consulting",
     shortDescription:
-      "Reducing revenue leakage through operational diagnostics and reengineering.",
-    headline: "Preventive Revenue Leakage Programmes – Up to 68% Recovery",
+      "Process analysis, diagnostics and reengineering to improve how the business runs.",
+    headline: "Find where efficiency, revenue or resources are being lost",
     overview:
-      "Our core differentiator: we identify and eliminate hidden revenue leakages before they impact your bottom line.",
+      "Improve operational efficiency and identify areas where your business may be losing revenue or resources. Our operations consulting approach focuses on process analysis, operational diagnostics, workflow improvement and business process reengineering.",
     points: [
+      "Process analysis",
       "Operational diagnostics",
+      "Workflow improvement",
       "Business process reengineering",
-      "Revenue recovery tools and dashboards",
     ],
     sections: [
       {
-        title: "How we work",
+        title: "Our operations approach",
         items: [
+          "Process analysis",
           "Operational diagnostics",
+          "Workflow improvement",
           "Business process reengineering",
-          "Revenue recovery tools and dashboards",
         ],
       },
     ],
@@ -307,26 +278,82 @@ export const services: Service[] = [
     slug: "virtual-working-techniques",
     title: "Virtual Working Techniques",
     shortDescription:
-      "Equipping teams with tools and skills to succeed in global environments.",
-    headline: "Live Locally. Work Globally.",
+      "Tools, communication and working practices for remote and international teams.",
+    headline: "Prepare teams for the modern global workplace",
     overview:
-      "Empowering people to work virtually, raise remote productivity, and thrive in global workplaces — living locally while working globally. Also available as a focused training course in our directory.",
+      "Prepare your teams for the modern global workplace with practical virtual working strategies. We help professionals and organizations develop the tools, communication practices and working techniques needed to collaborate effectively across remote and international environments.",
     points: [
-      "Virtual working models and collaboration tools",
-      "Remote performance and communication practices",
-      "Productivity and wellbeing in distributed teams",
+      "Tools for virtual collaboration",
+      "Communication practices",
+      "Working techniques for remote and international teams",
     ],
     sections: [
       {
         title: "Programme focus",
         items: [
-          "Virtual working models and collaboration tools",
-          "Remote performance and communication practices",
-          "Productivity and wellbeing in distributed teams",
+          "Tools for virtual collaboration",
+          "Communication practices",
+          "Working techniques for remote and international teams",
         ],
       },
     ],
     relatedCourseSlug: "hr-virtual-working-techniques",
+  },
+  {
+    slug: "kerala-governance-lab",
+    title: "Kerala Governance Lab (KGL)",
+    shortDescription:
+      "From routine administration to strategic, accountable, high-performance governance.",
+    headline: "Moving beyond the files toward high-performance governance",
+    overview:
+      "The Kerala Governance Lab (KGL), an initiative by TchristsFoM International Consultants Pvt. Ltd., helps institutions transition from routine administration to strategic, accountable, and high-performance governance. Led by veteran consultants with decades of field experience, KGL delivers practical, data-driven solutions that strengthen internal controls, optimize HR processes, and accelerate organizational growth.",
+    points: [
+      "Governance and accountability audit",
+      "HR and organizational diagnostics",
+      "KPI and KRA management systems",
+      "SOP and process audits",
+      "Delegation of authority frameworks",
+      "Financial and operational controls",
+      "Compliance and risk assessment",
+      "Digital governance systems",
+      "Customer and citizen service audits",
+    ],
+    sections: [
+      {
+        title: "Our mission",
+        body: "Better governance. Stronger institutions. Brighter society.",
+      },
+      {
+        title: "Specialized governance and management services",
+        items: [
+          "Governance and accountability audit — objective evaluations to enforce organizational integrity, clarity, and legal compliance.",
+          "HR and organizational diagnostics — in-depth workforce audits to optimize human capital structures and productivity.",
+          "KPI and KRA management systems — standardized performance measurement frameworks to drive accountability.",
+          "SOP and process audits — mapping and refining standard operating procedures to eliminate operational bottlenecks.",
+          "Delegation of authority frameworks — structuring clear decision-making pathways and administrative responsibilities.",
+          "Financial and operational controls — monitoring systems to protect capital resources and increase profitability.",
+          "Compliance and risk assessment — systematic identification and mitigation of regulatory and organizational risks.",
+          "Digital governance systems — modern digital workflows to streamline institutional decision-making.",
+          "Customer and citizen service audits — improving service standards for commercial and public-facing organizations.",
+        ],
+      },
+      {
+        title: "Industries and sectors",
+        items: [
+          "Government bodies and local self-government institutions (LSGD)",
+          "Banks and financial institutions",
+          "MSMEs and corporate enterprises",
+          "Hospitals and healthcare institutions",
+          "Malls and large-scale retail networks",
+          "Manufacturing and industrial units",
+        ],
+      },
+      {
+        title: "Our 6-step governance framework",
+        body: "Assess, audit, identify, design, implement, monitor. We evaluate the current setup, audit underlying vulnerabilities, design tailored operational frameworks, implement changes, and continuously monitor performance metrics to produce measurable results.",
+        items: ["Assess", "Audit", "Identify", "Design", "Implement", "Monitor"],
+      },
+    ],
   },
 ];
 

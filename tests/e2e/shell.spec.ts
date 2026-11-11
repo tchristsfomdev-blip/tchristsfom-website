@@ -5,6 +5,7 @@ const routes = [
   "/",
   "/about",
   "/services",
+  "/campus",
   "/courses",
   "/blog",
   "/contact",
@@ -22,7 +23,7 @@ test.describe("shell", () => {
     await expect(
       page.getByRole("heading", {
         level: 1,
-        name: "Professional Training Courses & Executive Education",
+        name: "Transform Your Business With Expert Consultancy",
       }),
     ).toBeVisible();
 

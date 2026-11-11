@@ -5,6 +5,20 @@ const withNextIntl = createNextIntlPlugin();
 
 const nextConfig: NextConfig = {
   /* config options here */
+  async redirects() {
+    return [
+      {
+        source: "/services/v-chro-5p-process-outsourcing",
+        destination: "/services/v-chro-consultancy",
+        permanent: true,
+      },
+      {
+        source: "/:locale(ar|ml)/services/v-chro-5p-process-outsourcing",
+        destination: "/:locale/services/v-chro-consultancy",
+        permanent: true,
+      },
+    ];
+  },
   cacheComponents: true,
   partialPrefetching: true,
   // Allow HMR when opening the local network URL on another device / browser tab.

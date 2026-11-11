@@ -12,9 +12,9 @@ export const siteConfig = {
   tagline: "Empowering Rights Through Empowering People",
   businessTagline:
     "Empowering Organizations. Equipping Professionals. Enhancing Results.",
-  headline: "TchristsFoM – Powering People, Planning, and Processes",
+  headline: "Empowering Organizations. Equipping Professionals. Enhancing Results.",
   description:
-    "TchristsFoM International Consultants delivers performance-centric consultancy and professional training across the UK, GCC & MENA region — empowering organisations with global strategies and local insight.",
+    "Tchrists-FoM International Consultants helps organizations improve performance, strengthen people and processes, and achieve sustainable growth across the UAE, India, UK, Iraq, Qatar and KSA.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   website: "https://tchrists.com",
   rabga: {
@@ -24,7 +24,7 @@ export const siteConfig = {
   locale: "en-GB",
   foundedYear: 1993,
   experienceYears: 33,
-  regions: ["UK, GCC & MENA region"],
+  regions: ["UAE", "India", "UK", "Iraq", "Qatar", "KSA"],
   industries: [
     "Aviation",
     "Oil & Gas",
@@ -77,7 +77,7 @@ export const siteConfig = {
         ],
       },
     ],
-    offices: "UK, GCC & MENA region",
+    offices: "UAE, India, UK, Iraq, Qatar & KSA",
     hours:
       "Available 24/7 — our team operates around the clock with strategic job allocation across time zones.",
   },
@@ -110,6 +110,7 @@ export const siteConfig = {
   nav: [
     { label: "About", href: "/about" },
     { label: "Services", href: "/services" },
+    { label: "Campus", href: "/campus" },
     { label: "Courses", href: "/courses" },
     { label: "Insights", href: "/blog" },
     { label: "Contact", href: "/contact" },
@@ -120,81 +121,112 @@ export const siteConfig = {
     { label: "Terms", href: "/terms" },
   ],
   about: {
-    eyebrow: "About TchristsFoM",
-    title: "Global expertise. Local transformation.",
+    eyebrow: "About Tchrists-FoM",
+    title: "Your strategic partner for business growth",
     story:
-      "With 33 years of cross-industry expertise, Tchrists-FoM International Consultants has empowered businesses across the UK, GCC & MENA region. Our vision is to create performance-centric, future-ready organisations.",
-    quote:
-      "Empowering local talents. Enhancing global organizations. Creating sustainable growth through strategy and skill.",
+      "Tchrists-FoM International Consultants combines extensive industry experience with innovative consulting approaches to help organizations navigate today's competitive business environment. Our approach goes beyond traditional consultancy. We work closely with clients to understand their unique challenges, identify opportunities and develop practical strategies that create measurable improvements.",
+    quote: "Empowering Organizations. Equipping Professionals. Enhancing Results.",
     vision:
-      "To be a globally recognised consultancy that transforms businesses into performance-centric, future-ready organisations through innovation, insight, and impact.",
+      "From HR transformation and financial management to marketing, IT and operational excellence, we strengthen businesses from the inside out — with a global outlook and local understanding across the UAE, India, UK, Iraq, Qatar and KSA.",
     mission:
-      "To empower local talents and organisations by delivering strategic, results-driven solutions that enhance business capabilities, leadership performance, and sustainable growth.",
+      "Help organizations perform better, develop capable professionals and create sustainable growth.",
   },
   home: {
-    eyebrow: "UK, GCC & MENA region",
-    h1: "Professional Training Courses & Executive Education",
-    lead: "Advance your career with British-standard, CPD-approved courses designed for modern workplace environments, human resources, and strategic business management — backed by TchristsFoM consultancy across the UK, GCC & MENA region.",
+    eyebrow:
+      "Empowering Businesses Through Strategic Consulting and Professional Development",
+    h1: "Transform Your Business With Expert Consultancy",
+    lead: "Tchrists-FoM International Consultants helps organizations improve performance, strengthen their people and processes, and achieve sustainable business growth. With expertise across human resources, finance, marketing, IT, operations and leadership development, we provide practical consulting solutions designed around your business goals.",
     sublead:
-      "Delivering performance-centric consultancy and hands-on development programmes that power people, planning, and processes.",
-    introTitle: "Empower Your Career and Organisation with UK-Aligned Learning",
+      "With a global outlook and local market understanding, our consultants support businesses across the UAE, India, UK, Iraq, Qatar and KSA. Whether you are a growing SME, an established organization or a professional looking to strengthen your capabilities, Tchrists-FoM provides the strategies, expertise and guidance you need to move forward.",
+    supportTitle: "Get Expert Business Consulting Support Today",
+    supportBody:
+      "Partner with Tchrists-FoM to identify business challenges, improve organizational performance and build strategies for sustainable growth.",
+    introEyebrow: "About Tchrists-FoM",
+    introTitle: "Your Strategic Partner for Business Growth",
     introBody:
-      "Welcome to TchristsFoM's course directory. We specialise in delivering high-impact, practical training tailored to modern remote work environments, global business landscapes, and professional standards. Whether you are an ambitious professional looking to upskill or an organisation building agile, high-performing teams, our CPD-approved modules provide actionable insights grounded in real-world application.",
+      "Tchrists-FoM International Consultants combines extensive industry experience with innovative consulting approaches to help organizations navigate today's competitive business environment. Our approach goes beyond traditional consultancy. We work closely with clients to understand their unique challenges, identify opportunities and develop practical strategies that create measurable improvements.",
     introExtra:
-      "Programmes sit beside our consultancy practice — Corporate Leadership Academy, V-CHRO, 5P process outsourcing, audits, finance, marketing, IT and operations — so learning connects to how organisations actually transform.",
+      "From HR transformation and financial management to marketing, IT and operational excellence, our multidisciplinary consulting services are designed to strengthen businesses from the inside out. Our focus is simple: help organizations perform better, develop capable professionals and create sustainable growth.",
     offeringsTitle: "Explore Our Professional Course Offerings",
     offeringsLead:
       "Six focused modules cover the skills most often requested by HR leaders, people managers, and organisations modernising how they work.",
-    servicesTitle: "What we offer",
+    servicesTitle: "Our Business Consulting Services",
     servicesLead:
-      "Strategic consultancy across HR, finance, marketing, IT and operations — designed around your challenges, capabilities and goals.",
-    whyTitle: "Why professionals and organisations choose TchristsFoM",
-    whyLead:
-      "Decades of cross-industry consulting, British-standard training, and delivery across the UK, GCC & MENA region.",
+      "Every organization has different goals, challenges and growth opportunities. Tchrists-FoM provides customized consulting solutions across key business functions.",
+    whyTitle: "Why Choose Tchrists-FoM?",
+    whyLead: "Business consulting built around your goals.",
     pillars: [
       {
-        title: "British-Standard Education",
-        body: "Globally recognised quality aligned with robust UK educational frameworks, so learning travels with your career across borders and industries.",
+        title: "Global Perspective",
+        body: "We combine international business perspectives with an understanding of local markets across the UAE, India, UK, Iraq, Qatar and KSA.",
       },
       {
-        title: "CPD-Approved Certification",
-        body: "Enhance your professional credibility with recognised continuing professional development credits that support career progression and organisational capability.",
+        title: "Customized Strategies",
+        body: "We do not believe in one-size-fits-all consulting. Our solutions are tailored to your organization's challenges, objectives and capabilities.",
       },
       {
-        title: "Flexible Learning",
-        body: "Expert-led training designed to fit the busy schedules of modern professionals and remote teams, without diluting depth or practical focus.",
+        title: "Multidisciplinary Expertise",
+        body: "Our consulting capabilities cover HR, finance, marketing, IT, operations and professional development, allowing us to address business challenges from multiple perspectives.",
       },
       {
-        title: "Multi-Sector Expertise",
-        body: "Practical modules and consultancy shaped by work across aviation, oil & gas, FMCG, construction, healthcare, facility management, banking and education.",
+        title: "People-Centric Approach",
+        body: "Strong organizations are built by strong people. We focus on developing people, strengthening leadership and creating effective workplace systems.",
+      },
+      {
+        title: "Practical Solutions",
+        body: "Our goal is not simply to provide recommendations. We focus on practical strategies that organizations can implement to improve performance and achieve measurable results.",
       },
     ],
-    casesTitle: "Success in action",
-    casesLead: "Selected outcomes from our consulting and academy programmes.",
-    cases: [
+    approachTitle: "Our Approach",
+    approachLead: "From business challenges to sustainable growth",
+    approachBody:
+      "We follow a structured approach to understand your business and develop solutions that create meaningful impact.",
+    steps: [
       {
-        title: "HR leadership transformation",
-        body: "Enabled a mid-sized enterprise to scale by integrating our V-CHRO solution and leadership coaching.",
+        title: "Understand",
+        body: "We begin by understanding your organization, objectives, challenges and current business environment.",
       },
       {
-        title: "Operational efficiency uplift",
-        body: "Achieved a 60% improvement in revenue retention through our Preventive Revenue Leakage Program.",
+        title: "Analyze",
+        body: "Our consultants assess existing systems, processes and performance to identify gaps and opportunities.",
+      },
+      {
+        title: "Strategize",
+        body: "We develop customized strategies based on your business requirements and long-term goals.",
+      },
+      {
+        title: "Implement",
+        body: "Our team supports the implementation of recommended strategies and solutions.",
+      },
+      {
+        title: "Improve",
+        body: "We evaluate outcomes and identify opportunities for continuous improvement and sustainable growth.",
+      },
+    ],
+    casesTitle: "Driving Better Business Performance",
+    casesLead:
+      "Tchrists-FoM supports organizations through strategic consulting, professional development and business transformation solutions.",
+    casesClose: "Your challenges are unique. Your consulting strategy should be too.",
+    cases: [
+      {
+        title: "HR transformation",
+        body: "Strategic HR leadership, audits and people systems that strengthen how the organization works.",
+      },
+      {
+        title: "Operational improvement",
+        body: "Process analysis, diagnostics and reengineering where efficiency, revenue or resources are being lost.",
+      },
+      {
+        title: "Leadership development",
+        body: "Practical learning and mentorship that prepare professionals for real organizational responsibility.",
       },
       {
         title: "Virtual workforce integration",
-        body: "Equipped a distributed team with tools and strategies to succeed globally using our Virtual Working Techniques.",
+        body: "Tools, communication practices and working techniques for remote and international teams.",
       },
       {
-        title: "Corporate Leadership Academy impact",
-        body: "Enabled local talents to transition into global roles through live mentorship, MNC exposure, and performance-driven training.",
-      },
-      {
-        title: "V-CHRO strategic deployment",
-        body: "Transformed HR operations for a scaling SME, achieving a 30% increase in efficiency and 50% reduction in operational costs.",
-      },
-      {
-        title: "5P process outsourcing excellence",
-        body: "Streamlined HR and compliance processes for a construction client using our 5P model, resulting in enhanced scalability.",
+        title: "Process outsourcing",
+        body: "The 5P model — People, Process, Policy, Performance and Progress — for HR and administrative functions.",
       },
     ],
     faqTitle: "Common questions",
@@ -215,26 +247,31 @@ export const siteConfig = {
           "Email info@tchrists.com or message us on WhatsApp for an immediate response.",
       },
     ],
-    ctaTitle: "Let’s discuss your business goals",
+    ctaTitle: "Let's Build Your Next Growth Strategy",
     ctaBody:
-      "Schedule a strategy conversation with TchristsFoM. We help you identify gaps, unlock growth, and design people-powered strategies for your organisation — including course schedules, corporate training, and consultancy.",
+      "Looking to improve your HR function, strengthen operations, develop leaders or transform your business processes? Tchrists-FoM International Consultants is ready to help you identify opportunities, overcome challenges and build a practical roadmap for sustainable growth.",
     trust: [
-      "33 Years Experience",
-      "UK, GCC & MENA region",
-      "CPD-Approved Training",
-      "Consultancy + Academy",
+      "UAE, India, UK, Iraq, Qatar & KSA",
+      "HR, finance, marketing, IT & operations",
+      "Strategies tailored to your goals",
+      "Practical, measurable results",
     ],
   },
   pages: {
     about: {
-      title: "About Us",
+      title: "About Tchrists-FoM",
       description:
-        "Tchrists-FoM International Consultants — 33 years of cross-industry expertise empowering businesses across the UK, GCC & MENA region.",
+        "Your strategic partner for business growth. Practical consulting across HR, finance, marketing, IT, operations and leadership development.",
     },
     services: {
-      title: "Consultancy Services",
+      title: "Our Business Consulting Services",
       description:
-        "Corporate Leadership Academy, V-CHRO, 5P process outsourcing, HR audits, finance, marketing, IT and operations strategies from TchristsFoM.",
+        "Customized consulting across leadership, HR, finance, marketing, IT, operations and the Kerala Governance Lab.",
+    },
+    campus: {
+      title: "Wellness & Leadership Campus",
+      description:
+        "Swimming pool and gym at TchristsFoM International Wellness & Leadership Academy in Perinchery, Thrissur.",
     },
     courses: {
       title: "Professional Training Courses & Executive Education",
@@ -253,7 +290,7 @@ export const siteConfig = {
     contact: {
       title: "Contact",
       description:
-        "Enquire about consultancy, Corporate Leadership Academy programmes, or professional training courses. Our team is available 24/7 across time zones.",
+        "Schedule a free strategy call, or enquire about consultancy, campus facilities and professional training. Our team is available 24/7 across time zones.",
       formNote:
         "Use the enquiry form for consultancy or course requests, or email / WhatsApp for an immediate response.",
     },
